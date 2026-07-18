@@ -48,6 +48,25 @@ cp SKILL.md /path/to/hermes-agent/skills/creative/ux-ui-psychology/SKILL.md
 
 Reload your session (or start a new one) and the skill will be picked up.
 
+## Use with other AI coding tools
+
+The skill is universal markdown — it works with Claude Code, Codex CLI, OpenCode, Cursor, Gemini CLI, Cline, Continue.dev, Aider, and Windsurf. Each tool has its own convention for where context files live.
+
+**Quick install guide:** see [`guides/`](guides/README.md) for per-tool instructions.
+
+| Tool | Convention | Guide |
+|------|------------|-------|
+| Hermes Agent | `~/.hermes/skills/<cat>/<name>/SKILL.md` | (this README) |
+| Claude Code | `.claude/skills/<name>.md` | [guides/claude-code.md](guides/claude-code.md) |
+| Codex CLI | `AGENTS.md` at root | [guides/codex.md](guides/codex.md) |
+| OpenCode | `AGENTS.md` at root | [guides/opencode.md](guides/opencode.md) |
+| Cursor | `.cursor/rules/<name>.mdc` | [guides/cursor.md](guides/cursor.md) |
+| Gemini CLI | `GEMINI.md` at root | [guides/gemini-cli.md](guides/gemini-cli.md) |
+| Cline | `.clinerules/` dir | [guides/cline.md](guides/cline.md) |
+| Continue.dev | `.continue/rules/<name>.md` | [guides/continue.md](guides/continue.md) |
+| Aider | `CONVENTIONS.md` or `--read` | [guides/aider.md](guides/aider.md) |
+| Windsurf | `.windsurfrules` at root | [guides/windsurf.md](guides/windsurf.md) |
+
 ## Sources
 
 Both source videos are linked from `SKILL.md`. Summary of where each idea comes from:

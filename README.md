@@ -20,15 +20,31 @@ It focuses on **behavioral psychology**, not visual aesthetics (colors, typograp
 
 ## Structure
 
-| Section | Purpose |
-|---------|---------|
-| Six Principles — Quick Reference | One-line heuristic per principle, for fast recall. |
-| Details & Triggers | When to apply each, why it works, AI-product specifics. |
-| A/B-Test Patterns | Three concrete redesigns with element-by-element A/B diffs. |
-| Screen Recipes | Ready recipes for onboarding / form / paywall. |
-| Ethical Boundary | What's manipulation vs. what's reducing confusion. |
-| Common Pitfalls | Mistakes that destroy the effect (e.g. starting progress at 0%). |
-| Verification Checklist | Ship-ready checklist for each screen. |
+This skill uses **progressive disclosure** — a thin entry point (`SKILL.md`, ~6 KB) that loads on every relevant task, with deep material in `references/` loaded only when needed.
+
+```
+ux-ui-psychology/
+├── SKILL.md                          # Entry point (~6 KB, always loaded)
+├── references/
+│   ├── principles.md                 # 6 principles: details, triggers, AI specifics
+│   ├── ab-test-patterns.md           # 3 A/B-test redesigns (paywall, ride-hailing, booking)
+│   ├── paywall-research.md           # Mobbin study: 2,995 paywalls, case studies, numbers
+│   ├── screen-recipes.md             # Ready recipes for 8 screen types
+│   └── ethics-and-pitfalls.md        # Ethical boundary, 10 pitfalls, ship checklist
+├── guides/                           # Per-tool install guides (Claude Code, Codex, Cursor, …)
+├── README.md
+├── LICENSE
+└── .gitignore
+```
+
+| File | Purpose |
+|------|---------|
+| `SKILL.md` | Quick reference tables + pointers. Loaded on every task. |
+| `references/principles.md` | Full details per principle: triggers, heuristics, AI specifics. |
+| `references/ab-test-patterns.md` | Three concrete redesigns with A/B diffs. |
+| `references/paywall-research.md` | Case studies with numbers, pricing/framing patterns, dark-pattern warnings. |
+| `references/screen-recipes.md` | Onboarding, form, paywall, booking, landing, churn, empty state, notifications. |
+| `references/ethics-and-pitfalls.md` | What not to do, why, and a ship-ready checklist. |
 
 ## Install
 

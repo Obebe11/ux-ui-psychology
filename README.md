@@ -1,9 +1,12 @@
 # UX/UI Psychology — Hermes Agent Skill
 
-A [Hermes Agent](https://hermes-agent.nousresearch.com/) skill that applies behavioral psychology to interface design. It bundles two complementary toolsets:
+**English** · [Русский](README.ru.md)
+
+A [Hermes Agent](https://hermes-agent.nousresearch.com/) skill that applies behavioral psychology to interface design. It bundles three complementary toolsets:
 
 1. **Six psychological principles** — smart defaults, goal gradient, reciprocity, IKEA/endowment, loss aversion, contrast effect.
 2. **Three proven A/B-test redesign patterns** — paywall, ride-hailing, booking — with concrete "Variant A vs Variant B" diffs.
+3. **Research from a study of 2,995 paywalls** (Mobbin) — real case studies (Opal, Blinkist, Headspace, Slopes, Outsider) with measurable results.
 
 The meta-principle tying them together: **every UI element poses an internal question to the user. The simpler the question, the higher the conversion.**
 
@@ -85,12 +88,13 @@ The skill is universal markdown — it works with Claude Code, Codex CLI, OpenCo
 
 ## Sources
 
-Both source videos are linked from `SKILL.md`. Summary of where each idea comes from:
+All three source videos are linked from `SKILL.md`. Summary of where each idea comes from:
 
 - **Six principles** — [youtube.com/watch?v=2TlIg3VokY8](https://www.youtube.com/watch?v=2TlIg3VokY8)
 - **Three A/B-test redesigns** — [youtube.com/watch?v=zr37ibqXl1U](https://www.youtube.com/watch?v=zr37ibqXl1U)
+- **2,995 paywalls study** — [youtube.com/watch?v=9ypqs_2fAl8](https://www.youtube.com/watch?v=9ypqs_2fAl8)
 
-All timestamps, percentages (70–90%, 2× loss aversion), and dollar figures ($50 vs $1900, $13–17, $19/mo) are from these videos.
+All timestamps, percentages (70–90%, 2× loss aversion), and dollar figures ($50 vs $1900, $13–17, $19/mo, Opal 7→17%, Outsider 5×) are from these videos.
 
 ## Ethical use
 

@@ -1,68 +1,95 @@
-# Six Psychological Principles — Details & Triggers
+# Six Principles — Trigger → Action Reference
 
-Deep reference for the six principles introduced in `SKILL.md`. Load this file when you need to decide *which* principle applies to a specific screen and *how* to apply it.
-
-## Quick Recap
-
-| # | Principle | One-line heuristic |
-|---|-----------|--------------------|
-| 1 | **Smart Defaults** | Don't show an empty form — pre-fill with the most common answers. |
-| 2 | **Goal Gradient** | Never start a progress bar at 0%. Give "free" 20% just for starting. |
-| 3 | **Reciprocity** | Give value first, then ask for email/signup. |
-| 4 | **IKEA + Endowment** | Let the user customize something "theirs" before signup — attachment grows. |
-| 5 | **Loss Aversion** | Show what they'll lose, not what they'll gain. Loss pain is ~2× stronger. |
-| 6 | **Contrast Effect** | Show a price next to a larger one — the brain evaluates relative to context. |
-
----
+Apply each principle **only when its trigger fires**. Don't preload all six on every screen — pick the 1–2 that match the current UI element.
 
 ## 1. Smart Defaults
 
-- **Trigger:** a form with 3+ empty fields.
-- **Heuristic:** pre-fill each field with the most common answer (timezone, country, currency, default privacy settings).
-- **Why it works:** 70–90% of people don't change the default — they read it as an expert recommendation. An empty form = decision fatigue.
-- **AI specifics:** pre-fill response style, tone, UI language by locale, default roles/use-cases by traffic source.
+**Trigger:** Form with 3+ empty fields.
+**Action:** Pre-fill each field with the most common answer:
+- Locale-derived: timezone, country, currency, language.
+- Product-derived: default role, default use-case, default style/tone.
+- Privacy-safe defaults: opt-in unchecked, sharing off.
+
+**AI specifics:** Pre-fill response style, tone, UI language, default roles/use-cases by traffic source.
+
+**Pitfall:** Pre-selecting paid or privacy-sensitive options. Defaults must be reversible and clearly optional.
+
+---
 
 ## 2. Goal Gradient
 
-- **Trigger:** onboarding/questionnaire/multi-step flow with a progress bar.
-- **Heuristic:** count account creation or the first click as a step. Show ≥ 20% progress from the very start. Never start at 0%.
-- **Why it works:** the closer to the goal, the faster the motion. Zero demotivates.
-- **AI specifics:** steps like "upload your first image" or "ask your first question" immediately advance the bar.
+**Trigger:** Multi-step flow with a progress bar (onboarding, questionnaire, wizard).
+**Action:** Count the user's first action as step 1. Show ≥ 20% progress from the first screen. Never start at 0%.
+
+**AI specifics:** Steps like "upload your first image" or "ask your first question" immediately advance the bar.
+
+**Pitfall:** Starting at 0% — even a token first step gives a measurable completion boost.
+
+---
 
 ## 3. Reciprocity
 
-- **Trigger:** screens where there is no value before signup ("result held hostage").
-- **Heuristic:** give a partial result for free (basic report, first 3 rows of generation, preview). Then ask for email/account for the full version.
-- **Why it works:** a subconscious sense of debt converts better than coercion.
-- **AI specifics:** give 2–3 free model outputs, cut the watermark or cap at N messages — then ask for signup.
+**Trigger:** Signup wall before any value delivered ("result held hostage").
+**Action:** Give a partial result for free first:
+- Basic report with full version behind signup.
+- First 3 rows of a table, blurred or truncated beyond that.
+- 2–3 free AI outputs before requiring account.
+- Watermark-free preview, paid version for full export.
+
+**AI specifics:** Let the user run 2–3 model outputs or see a partial result before asking for signup.
+
+**Pitfall:** Asking for email before any value. This is the most common drop-off cause on AI-product landings.
+
+---
 
 ## 4. IKEA + Endowment
 
-- **Trigger:** a standard "Email + Password + Button" screen with no engagement.
-- **Heuristic:** before signup, let the user **make something theirs**: pick a project name, choose a theme, finish a mini-lesson, upload an avatar, configure a dashboard.
-- **Why it works:** invested time and effort raise the product's subjective value. Closing the tab becomes psychologically more expensive.
-- **AI specifics:** let the user create their first assistant/chat/agent before you ask for signup.
+**Trigger:** Standard "Email + Password + Button" signup screen with no engagement.
+**Action:** Before signup, let the user **make something theirs**:
+- Pick a project name.
+- Choose a theme or avatar.
+- Finish a 30-second mini-lesson.
+- Configure a dashboard.
+- Create their first assistant/chat/agent.
+
+**AI specifics:** Let the user create and name their first assistant before the signup step.
+
+**Pitfall:** Forcing account creation before any customization. The customization *is* the hook.
+
+---
 
 ## 5. Loss Aversion
 
-- **Trigger:** paywall/upsell framed positively ("Buy to get X").
-- **Heuristic:** reframe as loss. Not "unlock PRO features", but "without PRO your files will be deleted in 7 days" / "you'll lose access to N saved projects".
-- **Why it works:** psychological pain of loss ≈ 2× stronger than joy of an equivalent gain (Kahneman & Tversky).
-- **AI specifics:** "your trained model will be deleted", "chat history will reset", "your prompt templates will become unavailable".
+**Trigger:** Paywall or upsell framed as a gain ("Buy to get X", "Unlock PRO features").
+**Action:** Reframe as a loss:
+- "Without PRO, your saved projects expire in 7 days."
+- "You'll lose access to N trained models."
+- "Your chat history resets on the free plan."
+
+**AI specifics:** "Your trained model will be deleted", "Chat history resets", "Prompt templates become unavailable".
+
+**Pitfall:** Faking a loss (claiming deletion that won't happen). This is a dark pattern and destroys trust.
+
+---
 
 ## 6. Contrast Effect
 
-- **Trigger:** price shown in isolation.
-- **Heuristic:** place the price next to a larger one (upsell insurance in the cart of an expensive item; yearly plan next to monthly; add-on next to the base tier).
-- **Why it works:** the brain evaluates a number relative to what it saw a second ago. $50 against $1900 reads as "rounding error".
-- **AI specifics:** "+$5/mo for priority access" next to a $20/mo base plan looks like nothing; the same $5 solo on a landing page looks expensive.
+**Trigger:** Price shown in isolation, no nearby anchor.
+**Action:** Place the price next to a larger one:
+- Upsell insurance next to a $1900 cart → $50 reads as "rounding error".
+- Yearly plan next to monthly → monthly looks expensive.
+- Add-on next to base tier → add-on looks small.
+
+**AI specifics:** "+$5/mo for priority access" next to a $20/mo base looks negligible; the same $5 solo looks expensive.
+
+**Pitfall:** Showing a price solo. The brain pulls out a calculator and computes the yearly cost.
 
 ---
 
 ## Which principle applies when?
 
-| Screen type | Primary principle | Secondary |
-|-------------|-------------------|-----------|
+| Screen / element | Primary | Secondary |
+|------------------|---------|-----------|
 | Onboarding step 1 | Goal Gradient | Reciprocity |
 | Empty long form | Smart Defaults | Goal Gradient |
 | Result behind signup | Reciprocity | — |
@@ -72,4 +99,4 @@ Deep reference for the six principles introduced in `SKILL.md`. Load this file w
 | Booking / cart | Contrast Effect | Reciprocity (preview) |
 | Cancel / churn screen | Loss Aversion | Reciprocity (last gift) |
 
-Rule of thumb: never apply all 6 to one screen. Pick 1–2 relevant to the task. See [`ethics-and-pitfalls.md`](ethics-and-pitfalls.md) for the failure modes of over-application.
+**Rule:** Never apply more than 2 principles to one screen.

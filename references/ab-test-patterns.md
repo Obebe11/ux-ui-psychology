@@ -1,78 +1,63 @@
-# A/B-Test Patterns: 3 Redesigns
+# A/B-Test Patterns — Trigger → Action
 
-Three concrete UI redesigns backed by real A/B-test results. Source: [youtube.com/watch?v=zr37ibqXl1U](https://www.youtube.com/watch?v=zr37ibqXl1U).
+Three concrete UI patterns derived from real A/B tests. Each has a **trigger** (when to apply) and **actions** (what to change). Apply them when the screen type matches.
 
-## Meta-principle
+## Meta-rule
 
-**Every UI element poses an internal question to the user. The simpler the question, the higher the conversion.** ([2:25](https://www.youtube.com/watch?v=zr37ibqXl1U&t=145s))
+**Every UI element poses an internal question to the user. The simpler the question, the higher the conversion.**
 
-Before redesigning, run every screen through this check: what internal question does this element raise, and can it be simplified?
-
----
-
-## Pattern A. Paywall — Variant B won
-
-| Element | Variant A (lost) | Variant B (won) |
-|---------|------------------|-----------------|
-| Core question | "Is this worth $19?" (heavy — product not yet valued) | "Do I want to try it free?" (light) |
-| CTA button | "Subscribe" (heavy word) | "Start my free trial" |
-| Graphics | Abstract illustrations | Real content screenshots |
-| Trial transparency | None | Timeline: today → day 5 (reminder) → day 7 (charge) |
-
-**Stealable UX tricks:**
-- **Trial timeline** with an explicit "We'll remind you on day 5 before it ends" — removes fear of hidden charges (transparency effect).
-- **CTA verb swap**: "subscribe" → "start free". Fewer commitments — less resistance.
-- **Real screenshots** instead of abstract art — the user sees what they're paying for before deciding.
-
-**AI specifics:** AI-product paywalls often stall on "will the model actually be better?". Fix: show concrete side-by-side outputs of free vs PRO, not abstract "premium features".
-
-For deeper paywall research (2,995 paywalls study), see [`paywall-research.md`](paywall-research.md).
+Before redesigning any screen, audit each element: what internal question does it raise? Can it be simplified?
 
 ---
 
-## Pattern B. Ride Hailing — Variant B won
+## Pattern A. Paywall
 
-| Element | Variant A (lost) | Variant B (won) |
-|---------|------------------|-----------------|
-| Price | Range "$13–17" (brain anchors on $17, the max loss) | One fixed price per tier |
-| Extra info | Price only | Price + pickup time ("2 min") — focus shifts to convenience |
-| Hint | None | Green "Cheaper" badge makes the decision for the user |
+**Trigger:** Subscription / paywall screen.
 
-**Why a range loses to a fixed price:**
-- **Anchoring**: the brain locks onto the top of the range as the "real" price and sees overpayment risk.
-- A range feels "more honest" but is psychologically scarier.
-- A fixed price removes cognitive load: the user thinks "ride or not?", not "how much will I overpay?".
+**Actions:**
+1. **Reframe the core question.** Replace "Is this worth $19?" with "Do I want to try it free?". Achieve this by:
+   - Leading with the free trial, not the price.
+   - CTA: "Start my free trial" instead of "Subscribe".
+2. **Add a trial timeline.** Show: today → day 5 (we'll remind you) → day 7 (charge). State the reminder promise explicitly.
+3. **Replace abstract graphics with real screenshots.** Show actual content the user will get.
+4. **For AI products:** show concrete free-vs-PRO output examples side-by-side, not "premium features" lists.
 
-**AI specifics:** don't show a range "$0.05–0.50 per request" — the user anchors on the max. Better: a fixed package price or the average cost of a typical session.
-
----
-
-## Pattern C. Booking — Variant B won
-
-| Element | Variant A (lost) | Variant B (won) |
-|---------|------------------|-----------------|
-| Overall logic | "Document form" — no emotion | "Immersive escape into the trip atmosphere" |
-| Photo | Small rectangle | Half-screen hero |
-| Title | "Beach house with a garden" (dry description) | "Coastal escape, steps from the sand" (emotional trigger) |
-| Price | Plain | Old price struck through (visible saving) |
-| Dates | "Jul 12–15" | "Friday – Wednesday" (helps visualize the trip) |
-| Total | May hide fees | Full total with no hidden fees upfront |
-
-**UX tricks:**
-- **Hero photo** on half the screen — emotional entry, not utilitarian info.
-- **Emotional copy** over factual labels: sells not "what this is", but "what you'll feel".
-- **Struck-through price** → visible win (contrast effect + anchoring on the old price).
-- **Weekdays instead of dates** → the user visualizes their vacation instead of parsing a calendar.
-- **Total with no fees** → removes fear of "hidden charges" (same transparency effect as in the paywall).
-
-**AI specifics:** an AI product landing often reads like "API documentation". Fix: sell a concrete result, not a model spec — "Turn a PDF into Excel in 30 seconds" beats "OCR engine with 99.2% accuracy".
+For deeper paywall triggers, see [`paywall-patterns.md`](paywall-patterns.md).
 
 ---
 
-## How to use these patterns
+## Pattern B. Ride Hailing (and any price-range screen)
 
-1. **Identify the screen type** (paywall / ride-hailing / booking / similar).
-2. **Find the closest pattern** above.
-3. **Identify the heaviest internal question** your current screen poses.
-4. **Borrow the corresponding trick** from the winning variant.
-5. **Run the same check on every element** until no heavy question remains.
+**Trigger:** Price displayed as a range, OR price shown without context.
+
+**Actions:**
+1. **Replace price ranges with a single fixed price per tier.** The brain anchors on the maximum of the range and sees overpayment risk.
+2. **Add convenience context next to the price:** pickup time ("2 min away"), delivery estimate, availability status. This shifts focus from cost to convenience.
+3. **Add a decision-making badge:** "Cheaper", "Fastest", "Best value" — takes the decision off the user's shoulders.
+
+**AI specifics:** Don't show "$0.05–0.50 per request" — the user anchors on the max. Use a fixed package price or the average cost of a typical session.
+
+---
+
+## Pattern C. Booking (and any emotional-decision screen)
+
+**Trigger:** Booking, travel, experience, or any screen where the user makes an emotional (not purely transactional) decision.
+
+**Actions:**
+1. **Make the hero visual dominant.** Photo on half the screen or larger. Small thumbnails kill emotion.
+2. **Replace factual titles with emotional copy.** Not "Beach house with garden" → "Coastal escape, steps from the sand". Sell the feeling, not the spec sheet.
+3. **Show the struck-through old price** next to the current one (visible saving).
+4. **Replace calendar dates with weekdays** when it helps visualization: "Friday – Wednesday" beats "Jul 12–15".
+5. **Show the full total upfront** — no hidden fees. Transparency removes the fear of being nickeled-and-dimed.
+
+**AI specifics:** An AI product landing often reads like API documentation. Reframe as a concrete user outcome: "Turn a PDF into Excel in 30 seconds" beats "OCR engine with 99.2% accuracy".
+
+---
+
+## How to apply these patterns
+
+1. **Identify the screen type:** paywall / price display / emotional decision / something else.
+2. **Find the matching pattern above.**
+3. **For each element on the screen, ask:** what internal question does this raise? Can it be simplified?
+4. **Apply the corresponding actions** until no heavy question remains.
+5. **Cross-check with [`principles.md`](principles.md)** to confirm the underlying principle (Loss Aversion, Contrast Effect, Reciprocity) is correctly applied.

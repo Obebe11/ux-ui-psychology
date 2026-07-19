@@ -2,11 +2,11 @@
 
 **English** · [Русский](README.ru.md)
 
-A [Hermes Agent](https://hermes-agent.nousresearch.com/) skill that applies behavioral psychology to interface design. It bundles three complementary toolsets:
+A [Hermes Agent](https://hermes-agent.nousresearch.com/) skill with trigger → action rules for interface design. It bundles three complementary toolsets:
 
-1. **Six psychological principles** — smart defaults, goal gradient, reciprocity, IKEA/endowment, loss aversion, contrast effect.
-2. **Three proven A/B-test redesign patterns** — paywall, ride-hailing, booking — with concrete "Variant A vs Variant B" diffs.
-3. **Research from a study of 2,995 paywalls** (Mobbin) — real case studies (Opal, Blinkist, Headspace, Slopes, Outsider) with measurable results.
+1. **Six psychological principles** — each with a concrete trigger (when to apply) and action (what to change).
+2. **Three A/B-test patterns** — paywall, ride-hailing, booking — as actionable rules, not case studies.
+3. **Paywall triggers** — concrete screen-level, CTA, trial, and pricing triggers drawn from a study of 2,995 paywalls.
 
 The meta-principle tying them together: **every UI element poses an internal question to the user. The simpler the question, the higher the conversion.**
 
@@ -27,15 +27,15 @@ This skill uses **progressive disclosure** — a thin entry point (`SKILL.md`, ~
 
 ```
 ux-ui-psychology/
-├── SKILL.md                          # Entry point (~6 KB, always loaded)
+├── SKILL.md                          # Entry point (~5 KB, always loaded)
 ├── references/
-│   ├── principles.md                 # 6 principles: details, triggers, AI specifics
-│   ├── ab-test-patterns.md           # 3 A/B-test redesigns (paywall, ride-hailing, booking)
-│   ├── paywall-research.md           # Mobbin study: 2,995 paywalls, case studies, numbers
+│   ├── principles.md                 # 6 principles as Trigger → Action
+│   ├── ab-test-patterns.md           # 3 patterns as Trigger → Action
+│   ├── paywall-patterns.md           # Paywall triggers: screen, CTA, trial, pricing
 │   ├── screen-recipes.md             # Ready recipes for 8 screen types
 │   └── ethics-and-pitfalls.md        # Ethical boundary, 10 pitfalls, ship checklist
 ├── guides/                           # Per-tool install guides (Claude Code, Codex, Cursor, …)
-├── README.md
+├── README.md (EN), README.ru.md (RU)
 ├── LICENSE
 └── .gitignore
 ```
@@ -43,9 +43,9 @@ ux-ui-psychology/
 | File | Purpose |
 |------|---------|
 | `SKILL.md` | Quick reference tables + pointers. Loaded on every task. |
-| `references/principles.md` | Full details per principle: triggers, heuristics, AI specifics. |
-| `references/ab-test-patterns.md` | Three concrete redesigns with A/B diffs. |
-| `references/paywall-research.md` | Case studies with numbers, pricing/framing patterns, dark-pattern warnings. |
+| `references/principles.md` | Each principle as a trigger, action, and pitfall. |
+| `references/ab-test-patterns.md` | Three patterns as trigger → action rules. |
+| `references/paywall-patterns.md` | Concrete paywall triggers: screen-level, CTA, trial, pricing, framing. |
 | `references/screen-recipes.md` | Onboarding, form, paywall, booking, landing, churn, empty state, notifications. |
 | `references/ethics-and-pitfalls.md` | What not to do, why, and a ship-ready checklist. |
 
